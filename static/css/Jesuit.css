@@ -1,0 +1,483 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+.carousel-item {
+  color: white;
+  position: relative;
+}
+
+.itemized {
+  height: 30rem;
+  background: rgb(0, 0, 0);
+  color: white;
+  position: relative;
+}
+
+.carousel-item img {
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.6;
+}
+
+.carousel-caption {
+  margin-bottom: 5rem;
+}
+
+.lessons{
+  position: relative;
+}
+
+.criteria {
+
+width: 175px;
+height: 34px;
+background-color: rgb(0, 0, 0);
+position: absolute;
+top: 35px;
+left: 0px;
+justify-content: center;
+display: flex;
+
+}
+.criteria h5 {
+
+font-size: 14px;
+text-align: left;
+color: #fff;
+align-content: center;
+
+
+}
+.criteria2 {
+
+width: 175px;
+height: 34px;
+background-color: rgb(0, 0, 0);
+position: absolute;
+top: 85px;
+left: 0px;
+justify-content: center;
+display: flex;
+
+}
+.criteria2 h5 {
+
+font-size: 14px;
+text-align: left;
+color: #fff;
+align-content: center;
+
+
+}
+
+
+.delivery{
+
+  background-color: rgb(0, 0, 0);
+  padding: 6px;
+  color: rgb(0, 0, 0);
+}
+
+.cover-image{
+
+  height: 160px;
+  width: auto;
+  overflow: hidden;
+}
+.cover-image1{
+
+  height: 300px;
+  width: auto;
+  overflow: hidden;
+}
+.whatsapp_float {
+  width: 10px;
+  height: 10px;
+  color: #fff;
+  text-align: center;
+  font-size: 20px;
+  z-index: 100;
+}
+
+.whatsapp_row{
+  display: flex;
+justify-content: center;
+align-content: center;
+  
+}
+
+.whatsapp-background{
+  position: fixed;
+  width: 145px;
+  height: 40px;
+  bottom: 20px;
+  right: 20px;
+  background-color: rgb(0, 0, 0);
+  color: #fff;
+  text-align: center;
+  font-size: 40px;
+  z-index: 90;
+  font-size: 14px;
+  font-weight: bold;
+  display: block;
+  justify-content: center;
+  align-content: center;
+  border-radius: 18px;
+}
+
+.reveal-header {
+  font-weight: bold;
+  cursor: pointer;
+  padding: 10px;
+  background-color: #f8f9fa;
+  border: 1px solid #e2e2e2;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+.reveal-content {
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+.toggle-icon {
+  float: right;
+  font-size: 1.2rem;
+}
+
+
+
+
+
+.whatsapp-icon {
+  margin-top: 15px;
+}
+
+/* for mobile */
+@media screen and (max-width: 767px) {
+  .whatsapp-icon {
+ 
+  }
+  .whatsapp_float {
+      width: 50px;
+      height: 50px;
+      bottom: 20px;
+      right: 20px; 
+      font-size: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .quest-academy-logo {
+    max-width: 200px; /* Adjust this value as needed */
+    height: auto;
+    
+  }
+}
+
+.background-images {
+  background-image: url("ask.jpg");
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  filter: brightness(0.2);
+  z-index: 1;
+}
+
+.content {
+  position: relative;
+  z-index: 3;
+}
+
+.no-margin {
+  margin-top: 10rem !important; /* Fixed important issue */
+}
+
+.school-navbar {
+  background-color: black;
+  color: white;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.rectan{
+  background-color: #ffffff;
+  width: 75%;
+  height: 0.3rem;
+}
+.navbar-brand {
+  flex-shrink: 1;
+  min-width: 0;
+}
+
+.navbar-toggler {
+  flex-shrink: 0;
+}
+.hover-zoom-container {
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  padding-bottom: 75%;
+  position: relative;
+}
+
+.hover-zoom {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease;
+  object-fit: cover;
+}
+
+.hover-zoom-container:hover .hover-zoom {
+  transform: scale(1.1);
+}
+
+button.btn-primary {
+  background-color: rgb(0, 0, 0) !important;
+}
+
+.application {
+  display: block;
+  justify-content: center;
+  padding-top: 40px;
+  background-color: rgb(0, 0, 0);
+}
+
+.nav-link {
+  color: black;
+  transition: all 0.2s;
+  position: relative;
+}
+
+
+
+.nav-link:hover::after {
+  opacity: 1;
+}
+
+.icons {
+  transition: all 0.3s;
+  transform: scale(1);
+}
+
+.icons:hover {
+  transform: scale(1.15);
+}
+
+.envelope {
+  transition: all 0.3s;
+  transform: scale(1);
+}
+
+
+.purple {
+  background-color: rgb(0, 0, 0);
+}
+
+.blue {
+  background-color: rgb(0, 0, 0);
+}
+
+.bg-dark {
+  background-color: rgb(0, 0, 0) !important;
+}
+
+.btn-outline-dark {
+  border-color: rgb(255, 153, 0);
+}
+
+.btn {
+  text-transform: none;
+}
+
+.footer {
+  color: white;
+  font-size: 14px;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+}
+
+.footer ul li {
+  text-decoration: none;
+  list-style-type: none;
+}
+
+.logo-placement {
+  height: 200px;
+  padding: 1rem;
+  margin: 20px 0px;
+}
+
+.hamburger-placement {
+  align-content: center;
+  padding: 1rem;
+  z-index: 2;
+}
+
+
+/*----------------------Main---------------------------------- */
+.school-logo {
+  margin-top: 50px;
+  max-height: 140px;
+  width: auto;
+  padding-top: 3rem;
+}
+
+.stats {
+  position: relative;
+  padding: 3rem;
+  background-color: rgb(0, 0, 0);
+}
+
+.stats img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  opacity: 0.1;
+}
+
+.stats .container {
+  position: relative;
+  z-index: 3;
+}
+
+.stats .stats-item {
+  padding: 20px;
+  width: 100%;
+}
+
+.partition {
+  height: 3px;
+  width: 100px;
+  background-color: blanchedalmond;
+}
+
+.icons {
+  font-size: 3rem;
+  text-align: center;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-62%, -50%) scale(0.1);
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  opacity: 0;
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+.popup.show {
+  display: block;
+  transform: translate(-62%, -50%) scale(1);
+  opacity: 1;
+}
+
+.display-color {
+  color: rgb(44, 44, 240);
+}
+
+.animate-section {
+  opacity: 0;
+  transform: translateY(100px) rotate(-5deg);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.animate-section.animate {
+  opacity: 1;
+  transform: translateY(0) rotate(0);
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+}
+
+.overlay.show {
+  opacity: 1;
+}
+
+.close-icon {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  z-index: 1;
+}
+
+.hov {
+  transition: all 0.3s;
+  transform: scale(1);
+}
+
+.hov:hover {
+  transform: scale(1.15);
+}
+
+a {
+  color: rgb(114, 1, 52);
+}
+
+@media (max-width: 900px) {
+  .mar {
+      margin-top: 40px;
+  }
+
+  .background-images {
+
+    height: auto;
+
+  }
+}
+
+@media (max-width: 767px) {
+  .mar {
+      margin-top: 60px;
+  }
+  .school-navbar {
+      padding: 5px;
+      
+  }
+  
+  .background-images {
+
+    height: auto;
+
+  }
+}

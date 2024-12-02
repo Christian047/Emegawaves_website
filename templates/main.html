@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+<!-- MDB CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.css" rel="stylesheet" />
+
+<!-- MDB JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+
+    <link
+   href=""
+    rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+    crossorigin="anonymous"
+  />
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="static/css/Jesuit.css" />
+
+    <title>Quest Academy Schools</title>
+  </head>
+  <body>
+
+
+    
+    <nav class="navbar navbar-dark school-navbar navbar-expand-lg fixed-top">
+      <div class="container">
+  
+
+        <div class="small text-white w-75">
+          
+          <span  class="m-1 fw-semibold"><i class="bi bi-check-circle-fill"></i> It Training/Education   </span>
+          <span class="m-1 fw-semibold"><i class="bi bi-check-circle-fill"></i> Computer hardware/Software Training</span>
+          <span class="m-1 fw-semibold"><i class="bi bi-check-circle-fill"></i> Web design/Development</span>
+          <span class="m-1 fw-semibold"><i class="bi bi-check-circle-fill"></i> Graphic designing</span>
+          <span class="m-1 fw-semibold"><i class="bi bi-check-circle-fill"></i> Coding for Kids</span>
+        
+        </div>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasExample"
+          aria-controls="offcanvasExample"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+      </div>
+    </nav>
+
+  
+    <div class="row">
+      <div class="col-9">
+       <div class="logo-placement">
+  <a href="{% url 'homepage' %}"><img src="{% static 'images/logo.png' %}" alt="School Logo" class="container school-logo"></a>
+</div>
+
+      </div>
+
+      <div class="col-3 hamburger-placement mt-5"> <i class="bi bi-list" 
+        data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasExample"
+        aria-controls="offcanvasExample"
+        aria-expanded="false"
+        aria-label="Toggle navigation" style="font-size: 40px;"></i></div>
+    </div>
+
+
+   <div class="container">
+    {% if messages %}
+        <div class="messages-container position-fixed top-0 end-0 p-3" style="z-index: 1050;">
+            {% for message in messages %}
+                <div class="alert {% if message.tags %}alert-{{ message.tags }}{% else %}alert-info{% endif %} alert-dismissible fade show" role="alert">
+                    {{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    <div class="row">
+
+      <div class="whatsapp-background">     Chat with us    <a href="https:/wa.me/+2348027989868"  target="_blank" class="whatsapp_float"><i class="bi bi-whatsapp whatsapp_float"></i></a></div>
+    </div>
+{% block content %}
+
+
+{% endblock  %}
+<footer class="footer container purple" id="ContactusSection">
+  <div class="m-3">
+    <div class="display-1 text-center">Stay Connected
+    </div>
+    <div class=" d-flex icons justify-content-center">
+      <a href="">
+        <i class="bi bi-instagram text-white mx-2"></i>
+        <i class="bi bi-twitter-x text-white mx-2"></i>
+        <i class="bi bi-facebook text-white mx-2"></i>
+        <i class="bi bi-whatsapp text-white mx-2"></i>
+      </a>
+    </div>
+  </div>
+  <div class="row text-center">
+
+
+
+    <div class="col-md-3">
+      <ul>
+        <li>
+          <h2>Main Office</h2>
+        </li>
+      EmegaWaves Academy <br>
+No 60 Obanye Street <br>
+New Market road, Onitsha <br>
+Anambra State, Nigeria
+      </ul>
+    </div>
+<br><br>
+<p><small class="text-center text-white my-4">Built by Anuebunwa Chris: 08066867884</small></p>
+
+
+</footer>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+
+    <script>
+       $(document).ready(function() {
+            // Pop-up code
+            $('.overlay, .popup').show();
+            setTimeout(function() {
+                $('.overlay, .popup').addClass('show');
+            }, 10);
+
+            function closePopup() {
+                $('.overlay, .popup').removeClass('show');
+                setTimeout(function() {
+                    $('.overlay, .popup').hide();
+                }, 300);
+            }
+
+            $('.close-popup, .close-icon, .overlay').click(closePopup);
+        });
+
+      function animateCounter($counter) {
+          var countTo = $counter.attr('data-target');
+          $({ countNum: $counter.text() }).animate({
+              countNum: countTo
+          },
+          {
+              duration: 2000,
+              easing: 'linear',
+              step: function() {
+                  $counter.text(Math.floor(this.countNum));
+              },
+              complete: function() {
+                  $counter.text(this.countNum);
+              }
+          });
+      }
+
+      function checkCounters() {
+          $('.counter').each(function() {
+              var $this = $(this);
+              if (!$this.hasClass('animated') && isElementInViewport($this)) {
+                  $this.addClass('animated');
+                  animateCounter($this);
+              }
+          });
+      }
+
+      function isElementInViewport(el) {
+          var rect = el[0].getBoundingClientRect();
+          return (
+              rect.top >= 0 &&
+              rect.left >= 0 &&
+              rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+              rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+          );
+      }
+
+      $(document).ready(function() {
+          checkCounters();
+          $(window).on('scroll', checkCounters);
+      });
+
+        /* --------------------Copy The animate section and add to Javascript----------------------------- */
+        function animateSectionOnScroll() {
+            const sections = document.querySelectorAll('.animate-section');
+            
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (sectionTop < windowHeight * 0.80) {
+                    section.classList.add('animate');
+                } else {
+                    section.classList.remove('animate');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', animateSectionOnScroll);
+        // Trigger once on load to animate sections already in view
+        animateSectionOnScroll();
+
+        /* --------------------Copy The animate section and add to Css----------------------------- */
+
+  </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
