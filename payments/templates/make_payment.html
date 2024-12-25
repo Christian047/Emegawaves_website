@@ -1,0 +1,64 @@
+{% extends "main.html" %}
+
+
+{% block content %}
+	
+
+	
+<script src="https://js.paystack.co/v1/inline.js"></script>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<section class="pb-4">
+	<div class="bg-white border rounded-5">
+	  
+	  <section class="w-100 p-4 flex justify-content-center pb-4">
+
+			<div class="container text-center">You are about  to fund your wallet with {{ payment.amount }} and transaction reference <b>{{ payment.ref| slice:":6" }}</b>
+
+			</div>
+			
+
+			<div class="container text-center"><button onclick="payWithPaystack()" class="btn btn-primary wider-button btn-block m-4">Fund</button></div>
+		</section>
+       
+    </div>
+    
+    
+  </div>
+</section>
+
+
+<script>
+	function payWithPaystack() {
+		let currency = "NGN";
+		let plan = "";
+		let ref = "{{ payment.ref }}";
+		let amount = "{{ payment.amount }}";
+		let obj = {
+			key: "{{ paystack_pub_key }}",
+			email: "{{ payment.email }}",
+			amount: "{{ amount_value }}",
+			ref: ref,
+			callback: function (response) {
+				window.location.href = "{% url 'verify_payment' payment.ref %}";
+			},
+		};
+		if (Boolean(currency)) {
+			obj.currency = currency.toUpperCase();
+		}
+		if (Boolean(plan)) {
+			obj.plan - plan;
+		}
+
+		var handler = PaystackPop.setup(obj);
+		handler.openIframe();
+	}
+</script>
+
+{% endblock content %}

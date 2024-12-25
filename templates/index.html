@@ -1,0 +1,491 @@
+
+
+{% extends "main.html" %}
+{% load static %}
+{% block content  %}
+    
+
+    
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+  </div>
+
+  <div class="carousel-inner">
+    <div class="carousel-item active itemized" data-bs-interval="2000">
+      <img src="{% static 'images/girl.jpg' %}" class="d-block w-100" alt="...">
+      <div class="carousel-caption p-4">
+        <div class="display-5 fw-bold">Emegawaves Academy Schools raising role models</div>
+        <a href="{% static 'images/abc.jpg' %}" download class="btn btn-primary purple mt-2" 
+           data-bs-target="#offcanvasExample"
+           aria-controls="offcanvasExample"
+           aria-expanded="false"
+           aria-label="Toggle navigation">Download Course Outline</a>
+        <a href="{% url 'prospectus' %}" class="btn btn-primary purple mt-2"
+           data-bs-target="#offcanvasExample"
+           aria-controls="offcanvasExample"
+           aria-expanded="false"
+           aria-label="Toggle navigation">Register</a>
+      </div>
+    </div>
+
+    <!-- <a href="{% static 'files/course_outline.jpg' %}" class="btn btn-primary" download>
+      Download Course Outline
+  </a> -->
+
+    <div class="carousel-item itemized">
+      <img src="{% static 'images/abuja.jpg' %}" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-md-block">
+        <div class="display-5 fw-bold">Your Child's mental and Academic growth is our priority</div>
+        <a href="{% static 'images/abc.jpg' %}" download class="btn btn-primary mt-2 purple" 
+           data-bs-target="#offcanvasExample"
+           aria-controls="offcanvasExample"
+           aria-expanded="false"
+           aria-label="Toggle navigation">Download Course Outline</a>
+        <a href="{% url 'prospectus' %}" class="btn btn-primary mt-2 purple" 
+           data-bs-target="#offcanvasExample"
+           aria-controls="offcanvasExample"
+           aria-expanded="false"
+           aria-label="Toggle navigation">Register</a>
+      </div>
+    </div>
+  </div>
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+    
+    
+
+
+
+
+    
+    <div class="courses">
+    
+      <div class="display-2 fw-bolder my-3 text-center">What We Offer</div>
+      <div class="card lessons my-4">
+        <div class="card-img">
+          <div class="cover-image1">
+          
+            <img src="{% static 'images/main.jpg' %}"  alt="" class="card-img">
+        </div>
+        </div>
+      
+        <div class="card-body">
+          <div class="display-4 fw-bolder mb-3 text-center">Basic Computer Training</div>
+      
+          <div class="criteria">  <h5 class="display-3 fw-bolder">   PHYSICAL TRAINING</h5>  </div>
+          <div class="criteria2">  <h5 class="display-3 fw-bolder "
+            q>ONLINE TRAINING</h5>  </div>
+            
+          <div class="card-text">
+            <p>Our Basic Computer Literacy Training is a practical, hands-on course that introduces you to the digital world with ease. Whether you’re new to computers or want to build confidence, this course simplifies every step of the process.</p>
+    
+            <div class="h5 fw-bold">Computer Appreciation, Microsoft Word</div>
+    
+            In the computer appreciation module, you’ll learn the basics of how computers work, from navigating the operating system to managing files. With Microsoft Word, you’ll create and format professional documents, work with tables and images, and explore tools like spell check and mail merge.
+            
+            <p>This course is perfect for beginners or anyone seeking a solid foundation in computer usage. Personalized, one-on-one training ensures that you learn at your own pace and gain confidence quickly. Start today and unlock the door to endless digital opportunities!</p>
+    
+    
+            <div class="reveal-header" data-bs-toggle="collapse" data-bs-target="#detailsBasic" aria-expanded="false" aria-controls="detailsBasic">
+              Course details <span class="toggle-icon">+</span>
+            </div>
+            <div id="detailsBasic" class="collapse reveal-content">
+              <p><strong>Price:</strong>N30,000</p>
+              <p><strong>Duration:</strong> 3 Months</p>
+             
+            </div>
+            <a href="{% url 'prospectus' %}  " class="btn btn-black shadow-none btn-block ">Register</a>
+            </div>
+        </div>
+      </div>
+      
+    
+      
+      <div class="card lessons my-4">
+        <div class="card-img">
+          
+          <div class="cover-image1">
+          
+            <img src="{% static 'images/woman.jpg' %}"  alt="" class="card-img">
+        </div>
+        
+        </div>
+      
+        <div class="card-body">
+          <div class="display-4 fw-bolder mb-3 text-center">Advanced Computer Training</div>
+      
+          <div class="criteria">  <h5 class="display-3 fw-bolder">   PHYSICAL TRAINING</h5>  </div>
+          <div class="criteria2">  <h5 class="display-3 fw-bolder"
+            >ONLINE TRAINING</h5>  </div>
+    
+    
+          <div class="card-text">
+            <p>Our Advanced Computer Literacy Training equips you with in-demand skills to boost productivity and excel in the workplace. Designed for professionals and those seeking advanced digital expertise, this training focuses on the powerful tools of Microsoft Office.</p>
+    
+            <div class="h5 fw-bold"> Microsoft Excel, Microsoft PowerPoint, Microsoft Access</div>
+    
+            <p>With Microsoft Excel, you’ll learn data analysis, formulas, and automation techniques to create professional spreadsheets. PowerPoint training teaches you to craft engaging, visually appealing presentations that leave a lasting impression. In Microsoft Access, you’ll master database management, learning how to organize data, build queries, and generate insightful reports.</p>
+            
+            <p>This course helps you stay ahead in a competitive world by offering personalized and practical training that adapts to your learning style. Join today and transform the way you work!</p>
+    
+    
+            <div class="reveal-header" data-bs-toggle="collapse" data-bs-target="#detailsBasic" aria-expanded="false" aria-controls="detailsBasic">
+              Course details <span class="toggle-icon">+</span>
+            </div>
+            <div id="detailsBasic" class="collapse reveal-content">
+              <p><strong>Price:</strong>N30,000</p>
+              <p><strong>Duration:</strong>3 Months</p>
+             
+            </div>
+    
+    
+            <a href="{% url 'prospectus' %}  " class="btn btn-black shadow-none btn-block ">Register</a>
+        
+          </div>
+    
+        </div>
+      </div>
+    
+      
+      <div class="card lessons my-4">
+        <div class="card-img">
+          
+          <div class="cover-image1">
+          
+            <img src="{% static 'images/graph.png' %}" alt="" class="card-img">
+        </div>
+        
+        </div>
+      
+        <div class="card-body">
+          <div class="display-4 fw-bolder mb-3 text-center">Graphic Designing</div>
+      
+          <div class="criteria">  <h5 class="display-3 fw-bolder">   PHYSICAL TRAINING</h5>  </div>
+          <div class="criteria2">  <h5 class="display-3 fw-bolder"
+            q>ONLINE TRAINING</h5>  </div>
+          <div class="card-text">
+            
+            <p>Let your creativity shine with our Graphic Design Training, designed for individuals eager to communicate visually and professionally. With tools like CorelDRAW and Adobe Photoshop, this course teaches you everything from vector design to advanced photo editing.</p>
+            <div class="h5 fw-bold"> Corel Draw, Photoshop, Canva</div>
+            <p>
+              In CorelDRAW, you’ll create logos, flyers, and other vector-based graphics with precision and professionalism. With Photoshop, you’ll master photo editing, retouching, and creating impactful digital visuals. Whether you want to pursue a career in design or bring your creative ideas to life, this course makes professional graphic design skills accessible and fun.
+              
+            </p>
+    
+    <p>
+      
+              Register now to gain the skills to create designs that stand out in today’s visual-driven world!
+    </p>
+    
+    
+            <div class="reveal-header" data-bs-toggle="collapse" data-bs-target="#detailsBasic" aria-expanded="false" aria-controls="detailsBasic">
+              Course Details<span class="toggle-icon">+</span>
+            </div>
+            <div id="detailsBasic" class="collapse reveal-content">
+              <p><strong>Price:</strong>N30,000</p>
+              <p><strong>Duration:</strong>3 Months</p>
+             
+            </div>
+
+            <a href="{% url 'prospectus'%}  " class="btn btn-black shadow-none btn-block ">Register</a>
+          </div>
+        </div>
+      </div>
+      
+
+
+
+      <div class="card lessons my-4">
+        <div class="card-img">
+          
+          <div class="cover-image1">
+          
+            <img src="{% static 'images/code.jpg' %}" alt="" class="card-img">
+        </div>
+        
+        </div>
+      
+        <div class="card-body">
+          <div class="display-4 fw-bolder mb-3 text-center">Web Development</div>
+      
+          <div class="criteria">  <h5 class="display-3 fw-bolder">   PHYSICAL TRAINING</h5>  </div>
+          <div class="criteria2">  <h5 class="display-3 fw-bolder"
+            q>ONLINE TRAINING</h5>  </div>
+          <div class="card-text">
+            
+            <p>We teach how to build functional, websites with our Web Development Training, created for individuals ready to dive into the digital world. Using tools like HTML, CSS, Bootstrap, Python, SQL,  this course equips you with the skills to design, develop, and optimize websites for professional use</p>
+            <div class="h5 fw-bold"> Html,CSS,Javascript (Frontend Development)</div>
+            Learn the building blocks of the web with HTML for structuring content, CSS for styling, and Bootstrap for creating responsive, mobile-first designs. Whether you're crafting elegant layouts or building interactive elements, these tools will help you bring your web projects to life.
+            <div class="h5 fw-bold"> Python,Sql(Backend development)</div>
+            Enhance your web development projects with graphic design skills using tools like Canva and Photoshop. Create eye-catching banners, icons, and visuals to elevate your websites and make a lasting impression on your audience.
+            <p>
+         
+              
+            </p>
+    
+    
+            <div class="reveal-header" data-bs-toggle="collapse" data-bs-target="#detailsBasic" aria-expanded="false" aria-controls="detailsBasic">
+              Course Details<span class="toggle-icon">+</span>
+            </div>
+            <div id="detailsBasic" class="collapse reveal-content">
+              <p><strong>Cousrse:</strong>Frontend Development:</p>
+              <p><strong>Price:</strong> N60,000</p>
+              <p><strong>Duration:</strong> 3 Months</p>
+              <hr>
+              <p><strong>Course:</strong>Backend Development</p>
+              <p><strong>Price:</strong> N80,000</p>
+              <p><strong>Duration:</strong> 3 Months</p>
+             
+            </div>
+
+            <a href="{% url 'prospectus'%}  " class="btn btn-black shadow-none btn-block ">Register</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card lessons my-4">
+        <div class="card-img">
+          
+          <div class="cover-image1">
+          
+            <img src="{% static 'images/kids.jpg' %}" alt="" class="card-img">
+        </div>
+        
+        </div>
+      
+        <div class="card-body">
+          <div class="display-4 fw-bolder mb-3 text-center">Coding For Kids</div>
+      
+          <div class="criteria">  <h5 class="display-3 fw-bolder">   PHYSICAL TRAINING</h5>  </div>
+          <div class="criteria2">  <h5 class="display-3 fw-bolder"
+            q>ONLINE TRAINING</h5>  </div>
+          <div class="card-text">
+            
+            <p>Our program introduces children to programming through interactive and engaging software designed to make learning technology fun and accessible. We transform complex coding concepts into playful experiences that capture young imaginations.</p>
+            <div class="h5 fw-bold"> Scratch, CodeCombat, Minecraft </div>
+            Scratch remains our primary learning platform, offering a vibrant environment where children create interactive stories, animations, and games by dragging and dropping code blocks. This approach helps kids understand programming logic without the intimidation of traditional coding.
+            <p>
+              <div class="h5 fw-bold"> Code.Org</div>
+              <p>Code.org offers hour-of-code activities featuring popular characters, providing bite-sized coding experiences that make learning engaging and approachable for younger children.</p>
+              Our approach nurtures curiosity and helps children understand technology as a powerful tool for creativity. By the end of our program, kids don't just learn to code - they discover the joy of creating their own digital worlds.
+            </p>
+            <p>
+         
+              
+            </p>
+    
+    
+            <div class="reveal-header" data-bs-toggle="collapse" data-bs-target="#detailsBasic" aria-expanded="false" aria-controls="detailsBasic">
+              Course Details<span class="toggle-icon">+</span>
+            </div>
+            <div id="detailsBasic" class="collapse reveal-content">
+ 
+              <p><strong>Price:</strong> N35,000</p>
+              <p><strong>Duration:</strong>3-4 Weeks</p>
+   
+             
+            </div>
+
+            <a href="{% url 'prospectus'%}  " class="btn btn-black shadow-none btn-block ">Register</a>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="card why_we_are bg-light">
+    
+     <div class="container">
+       <h5 class="display-3 fw-bolder text-center my-4">   Why we are rated Number one IT Training Institute in Anambra Nigeria</h5>
+       <div class="card-text">
+        <p><a href="">Emegawaves Academy</a> the best ICT and computer training institute in Anambra and Environs. Our Practical one-on-one personalized training has set us as one of the best Computer training schools in the State.</p>
+        <p>We strongly believe that anybody can learn and acquire a new skill if attention is given to their personal challenges –schooling, and learning should not be a competition,</p>
+       
+        <p>We are proud to say that we came into ICT and Computer Training in Abuja Nigeria to make a difference by tailoring each training to the student’s needs. You now have a computer training school in Abuja Nigeria that put the interest of the students first.</p>
+       
+        <p>We are one of the top 5 computer training schools in Anambra Nigeria that offers practical hands-on training with project-based learning.</p>
+    
+        <p>
+       
+        </p>
+       </div>
+     </div>
+    </div>
+    
+    
+    <!-- Training Delivery Method -->
+    <div class="card delivery text-white">
+      <div class="card-body">
+        <div class="display-2 fw-bolder my-3 text-center">Training Delivery Method</div>
+        <div class="cover-image">
+          <div class="card-img"><img src="{% static 'images/main.jpg' %}"  alt=""></div>
+        </div>
+    
+        <div class="h5 fw-bold text-center mt-3">Physical training</div>
+        <p>
+          <div class="card-text fw-semibold">Join our Physical Instructor led Interactive, and practical hands-on training in our training centers in Nigeria</div>
+        </p>
+    
+        
+        <div class="reveal-header text-black" data-bs-toggle="collapse" data-bs-target="#detailsBasic" aria-expanded="false" aria-controls="detailsBasic">
+          More details <span class="toggle-icon">+</span>
+        </div>
+        <div id="detailsBasic" class="collapse reveal-content text-black">
+          <p><strong>Courses:</strong> All Computer Courses</p>
+          <p><strong>Venue:</strong> No 64 Obanye Street Onitsha</p>
+          <p><strong>Time:</strong> 9am -3pm</p>
+         
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="cover-image">
+          <div class="card-img"><img src="{% static 'images/main.jpg' %}"  alt=""></div>
+        </div>
+    
+        <div class="h5 fw-bold text-center mt-3">Online training</div>
+        <p>
+          <div class="card-text fw-semibold">Learn from the comfort of your home or offices with our Virtual-Led live online instructors</div>
+        </p>
+        <div class="reveal-header text-black" data-bs-toggle="collapse" data-bs-target="#detailsBasic" aria-expanded="false" aria-controls="detailsBasic">
+          More details <span class="toggle-icon">+</span>
+        </div>
+        <div id="detailsBasic" class="collapse reveal-content text-black">
+          <p><strong>Courses:</strong> All Computer Courses</p>
+          <p><strong>Venue:</strong> Google Meet/Skype</p>
+          <p><strong>Time:</strong> 7pm -9pm</p>
+         
+        </div>
+      </div>
+    
+    </div>
+    
+    
+    
+    <!-- Location -->
+    <div class="card">
+      <div class="display-2 fw-bolder my-3 text-center">Our Location</div>
+    <div class="card-img text-center">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.846698086736!2d6.779952613091766!3d6.1512800070038836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x10439302d034955d%3A0x3070d117880a0aae!2s61%20Obanye%20Street%2C%20City%20Centre%2C%20Onitsha%20431108%2C%20Anambra!5e0!3m2!1sen!2sng!4v1732961773155!5m2!1sen!2sng" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    
+    </div>
+    
+    
+    
+            <div class="container welcome animate-section " id="WelcomeSection">
+              <div class="row">
+            <div class="col-md-6">
+              <div class="display-2 fw-bolder my-3 text-center">Welcome to Emegawaves Academy</div>
+              <hr>
+              <p>Emegawaves was established ... Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa ex delectus, quam ipsam adipisci, quos hic tempora quis minus repudiandae, quae officia eos fugit! Recusandae laudantium eum a ducimus eligendi.</p>
+            <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus quia sed ab temporibus esse at animi porro laudantium modi incidunt eum cupiditate itaque odit iure voluptatibus, consequatur aperiam error officia.
+            </p>
+            <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus quia sed ab temporibus esse at animi porro laudantium modi incidunt eum cupiditate itaque odit iure voluptatibus, consequatur aperiam error officia.
+            </p>
+          
+                 <div> <a href="{% static 'images/logo.png' %}" class="purple text-light p-1 rounded text-decoration-none">Read More</a></div></p>
+            </div>
+
+            
+            <div class="col-md-6">
+              <div class="card">
+                <img src="{% static 'images/author.jpg' %}"  alt="" class="card-img">
+                <div class="card-header text-center  text-light bg-dark"><div class="card-title fw-bold">Mr Arumna Chibuike Ogunni Msc. Ph.D </div>Proprietor</div>
+              </div>
+            </div>
+              </div>
+          
+            </div>
+    
+  
+    
+            <div id="stats" class="stats section dark-background container text-white">
+              <img src="{% static 'girl.jpg' %}"  alt="" class="bg-black">
+              <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
+                <div class="row gy-1">
+                  <div class="m-3">
+                    <div class="display-3 fw-bolder text-center">Why Choose Us?</div>
+                    <div class="display-6 text-center text-white">Here are some statistics about our School</div>
+                  </div>
+                  <div class="col-lg-3 col-md-6 mb-2">
+                    <div class="stats-item text-center w-100 h-100">
+                      <i class="bi bi-highlighter" style="font-size: 20px;"></i>
+                      <div class="counter display-3 fw-bolder" data-target="160">0</div>
+                      <div class="display-6">Certified Teachers</div>
+        
+                    </div>
+                  </div><!-- End Stats Item -->
+                  <div class="col-lg-3 col-md-6 mb-2">
+                    <div class="stats-item text-center w-100 h-100">
+                      <i class="bi bi-building" style="font-size: 20px;"></i>
+                      <div class="counter display-3 fw-bolder" data-target="6">0</div>
+                      <div class="display-6">Schools</div>
+        
+                    </div>
+                  </div><!-- End Stats Item -->
+                  <div class="col-lg-3 col-md-6 mb-2">
+                    <div class="stats-item text-center w-100 h-100">
+                      <i class="bi bi-mortarboard" style="font-size: 20px;"></i>
+                      <div class="counter display-3 fw-bolder" data-target="100">0</div>
+                      <div class="display-6">Passing to Univeristies</div>
+        
+                    </div>
+                  </div><!-- End Stats Item -->
+                  <div class="col-lg-3 col-md-6 mb-2">
+                    <div class="stats-item text-center w-100 h-100">
+                      <i class="bi bi-backpack" style="font-size: 20px;"></i>
+                      <div class="counter display-3 fw-bolder" data-target="26">0</div>
+                      <div class="display-6">Years Old</div>
+        
+                    </div>
+                  </div><!-- End Stats Item -->
+                </div>
+              </div>
+        
+            </div>
+        
+            <div class="faq1">
+    
+              <h5 class="display-3 my-3 fw-bolder text-center">   Frequently Asked Questions</h5>
+    
+             <!-- Advanced Computer Literacy -->
+      <div class="reveal-header" data-bs-toggle="collapse" data-bs-target="#detailsAdvanced" aria-expanded="false" aria-controls="detailsAdvanced">
+        How long do the courses take? <span class="toggle-icon">+</span>
+      </div>
+      <div id="detailsAdvanced" class="collapse reveal-content">
+     The duration varies by course:
+
+<p>Short courses (e.g., Microsoft Office): 4–6 weeks</p>
+<p>Intermediate courses (e.g., Graphic Design): 8–12 weeks</p>
+<p>Advanced courses (e.g., Programming): 12–24 weeks</p>
+<p>Custom timelines are also available for personalized training.</p>
+      </div>
+    
+      <!-- Graphic Design Training -->
+      <div class="reveal-header" data-bs-toggle="collapse" data-bs-target="#detailsDesign" aria-expanded="false" aria-controls="detailsDesign">
+        Do I get a certificate after completing a course? <span class="toggle-icon">+</span>
+      </div>
+      <div id="detailsDesign" class="collapse reveal-content">
+<p>Yes, you will receive a recognized certificate of completion after successfully finishing the course. Advanced courses may include additional certifications, such as CompTIA or Cisco, at an extra cost.</p>
+      </div>
+    
+            </div>
+    
+    
+
+    {% endblock  %}

@@ -1,0 +1,34 @@
+{% extends "main.html" %}
+{% load static %}
+{% block content  %}
+
+    <div class="form-control my-5 py-2">
+        <h3 class="text-center">Submit Proof of Payment</h3>
+        {% if error %}
+            <div class="alert alert-danger">{{ error }}</div>
+        {% endif %}
+        {% if message %}
+            <div class="alert alert-success">{{ message }}</div>
+        {% endif %}
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="id_full_name" class="form-label">Full Name</label>
+                {{ form.full_name }}
+            </div>
+            <div class="mb-3">
+                <label for="id_passcode" class="form-label">Passcode</label>
+                {{ form.passcode }}
+            </div>
+            <div class="mb-3">
+                <label for="id_proof_file" class="form-label">Payment Slip</label>
+                {{ form.proof_file }}
+            </div>
+            <button type="submit" class="btn btn-primary shadow-none">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
+
+
+{% endblock %}

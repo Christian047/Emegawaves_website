@@ -1,0 +1,164 @@
+
+{% extends "main.html" %}
+{% load static %}
+{% block content  %}
+    
+  <style>
+    .success-container {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: white;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .success-header {
+      background-color: black;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .payment-instructions {
+      background-color: #f8f9fa;
+      border-left: 4px solid rgb(114, 1, 52);
+      padding: 1rem;
+      margin: 1rem 0;
+    }
+
+    .registration-details {
+      background-color: #f4f4f4;
+      padding: 1rem;
+      border-radius: 5px;
+    }
+
+    .btn-home {
+      background-color: rgb(114, 1, 52) !important;
+      color: white;
+    }
+
+
+
+
+    .copy-box {
+      position: relative;
+      background-color: #f8f9fa;
+      padding: 15px 0px;
+
+      cursor: pointer;
+      padding-right: 40px;
+      /* Space for the icon */
+      transition: background-color 0.3s ease;
+    }
+
+    .copy-box:hover {
+      background-color: #e9ecef;
+    }
+
+    .copy-icon {
+      position: absolute;
+      top: 18px;
+      right: 10px;
+      font-size: 1.2rem;
+      color: #6c757d;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    .copy-icon.copied {
+      color: #00af29;
+      /* Green color to indicate success */
+      transform: scale(1.2);
+      /* Slight enlargement for effect */
+    }
+  </style>
+
+</head>
+<body>
+ 
+
+    <div class="container success-container">
+        <div class="success-header">
+            <h2>Registration Successful</h2>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                {% if error %}
+                    <div class="alert alert-danger">{{ error }}</div>
+                {% else %}
+                    <h3 class="card-title text-center mb-4" style="color: rgb(44, 44, 240);">
+                        Congratulations! Follow the next steps carefully to complete your registration
+                    </h3>
+
+                    <div class="payment-instructions">
+                        <h4>Next Steps</h4>
+                        <p>To complete your registration, please follow these instructions:</p>
+                        <ol>
+                            <li>Make a bank transfer of <span class="fw-bold" style="font-size: 20px; color:blue;">{{course_price}}</span> to the following account: input the secret code in the payment description</li>
+                            <ul>
+                                <li style="font-size: 20px;">Bank Name: <strong>Fidelity Bank</strong></li>
+
+                                <div class="copy-box" onclick="copyToClipboard(this)" data-copy="1234567890">
+                                    <li style="font-size: 20px;">Account Number: <strong>1234567890</strong></li>
+                                    <i class="bi bi-clipboard copy-icon"></i>
+                                </div>
+
+                                <li style="font-size: 20px;">Account Name: <strong>Quest Academy Schools</strong></li>
+
+                                <div class="copy-box" onclick="copyToClipboard(this)" data-copy="{{ secret_code }}">
+                                    <li style="font-size: 20px;">Secret Code: <strong>{{ secret_code }}</strong></li>
+                                    <i class="bi bi-clipboard copy-icon"></i>
+                                </div>
+                            </ul>
+                            <br>
+
+                            <div class="fw-bold">
+                                <li>Send proof of payment below or to <a href="mailto:payments@questacademy.com">payments@questacademy.com</a></li>
+                            </div>
+                            <li>Include your full name and selected course in the email</li>
+                        </ol>
+
+                        <div class="text-center mt-4">
+                          <a href="{% url 'proof' %}" class="btn btn-home btn-grid">Submit Proof</a>
+                          <a href="{% url 'initiate_payment' %}" class="btn btn-home">Make Payment</a>
+                      </div>
+                    </div>
+
+                    <div class="registration-details">
+                        <h4>Your Registration Details</h4>
+                        <div class="card-body">
+                            <p><strong>Name:</strong> {{ first_name }} {{ last_name }}</p>
+                            <p><strong>Email:</strong> {{ email }}</p>
+                            <p><strong>Age:</strong> {{ age }}</p>
+                            <p><strong>Address:</strong> {{ address }}</p>
+                            <p><strong>Course:</strong> {{ course }}</p>
+                            <p><strong>Education Level:</strong> {{ education_level }}</p>
+                            <p><strong>Teaching Method:</strong> {{ teaching_method }}</p>
+                            <p><strong>Currently in School:</strong> {{ currently_in_school }}</p>
+                        </div>
+                    </div>
+
+       
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <script>
+    function copyToClipboard(element) {
+        const textToCopy = element.getAttribute('data-copy');
+        const icon = element.querySelector('.copy-icon');
+
+        navigator.clipboard.writeText(textToCopy).then(() => {
+            icon.classList.add('copied');
+            setTimeout(() => {
+                icon.classList.remove('copied');
+            }, 1000);
+        }).catch(err => {
+            console.error("Failed to copy text: ", err);
+        });
+    }
+    </script>
+
+    {% endblock  %}

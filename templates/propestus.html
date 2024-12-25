@@ -1,0 +1,156 @@
+{% extends "main.html" %}
+
+{% load static %}
+
+
+{% block content %}
+
+{% if error %}
+<div class="alert alert-danger">{{ error }}</div>
+{% endif %}
+
+
+    <div class="card container my-3 shadow-sm p-3" >
+      <h5 >Enroll at Emegawaves Academy</h5>
+
+ {% for courses in all_courses %}
+{{courses.name}}
+{% endfor %} 
+
+      We are excited to invite passionate and dedicated individuals to apply for our Future Legend program at Quest Academy Schools. Our onboarding period runs from November 27 to October 12 each year, and we are looking for exceptional kids who are ready to be the next generation of leaders.
+
+      <div id="lottie-container" style="width: auto; height: 300px;"></div>
+    </div>
+
+    <div class="display-1 fw-bolder text-center">Registration Form</div>
+    
+    <div class="card container bg-dark my-3 prospectus-card text-white" id="prospectus">
+      <form method="post">
+        {% csrf_token %}
+        
+        <div class="my-3">
+          <label for="id_first_name" class="form-label">First Name</label>
+          <input type="text" class="form-control" id="id_first_name" name="first_name" placeholder="First Name" required>
+        </div>
+        
+        <div class="mb-3">
+          <label for="id_last_name" class="form-label">Last Name</label>
+          <input type="text" class="form-control" id="id_last_name" name="last_name" placeholder="Last Name" required>
+        </div>
+        
+        <div class="mb-3">
+          <label for="id_email" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="id_email" name="email" placeholder="name@example.com" required>
+        </div>
+        
+        <div class="mb-3">
+          <label for="id_age" class="form-label">Age</label>
+          <input type="number" class="form-control" id="id_age" name="age" placeholder="Age" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="id_address" class="form-label">Address</label>
+          <input type="text" class="form-control" id="id_address" name="address" placeholder="Address" required>
+        </div>
+        <div class="mb-3">
+          <label>Select Course</label>
+          <select class="form-select" name="course" required>
+            <option value="">Choose a course</option>
+            {% for course in all_courses %}
+            <option value="{{ course.id }}">{{ course.name }}</option>
+            {% endfor %}
+          </select>
+        </div>
+        
+        <div class="mb-3">
+          <label>Educational Level</label>
+          <select class="form-select" name="education_level" required>
+            <option value="">What was your last level?</option>
+            <option value="primary">Primary</option>
+            <option value="secondary">Secondary School</option>
+            <option value="university">University</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label>Teaching Method</label>
+          <select class="form-select" name="teaching_method" required>
+            <option value="online">Online</option>
+            <option value="offline">Offline</option>
+          </select>
+        </div>
+        
+        <div class="mb-3">
+          <label>Are you currently in School?</label>
+          <select class="form-select" name="currently_in_school" required>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-outline-white text-center my-5">Submit</button>
+      </form>
+    </div>
+
+    <!-- Registration Success Template -->
+    <script>
+      {% if secret_code %}
+        alert('Registration Successful! Your Secret Code is: {{ secret_code }}');
+      {% endif %}
+    </script>
+
+ 
+    <!-- Lottie -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+
+
+    <script>
+      // Load the Lottie animation
+      lottie.loadAnimation({
+        container: document.getElementById('lottie-container'), // The container for the animation
+        renderer: 'svg', // Use SVG rendering for scalability
+        loop: true, // Set to true for looping animations
+        autoplay: true, // Automatically start playing
+        path: 'static/images/anime.json', // Path to your Lottie JSON file
+      });
+    </script>
+    
+
+
+{% comment %} <script>
+  $(document).ready(function() {
+    // Form submission handler
+    $('#submitBtn').on('click', function(e) {
+        e.preventDefault(); // Prevent default form submission
+
+        // Collect form data
+        var formData = {
+            firstName: $('#firstName').val(),
+            lastName: $('#lastName').val(),
+            email: $('#email').val(),
+            age: $('#age').val(),
+            address: $('#address').val(),
+            course: $('.course-select').val(),
+            educationLevel: $('.education-select').val(),
+            teachingMethod: $('.teaching-method-select').val(),
+            currentlyInSchool: $('.school-status-select').val()
+        };
+
+        // Simple client-side validation
+        if (!formData.firstName || !formData.lastName || !formData.email) {
+            alert('Please fill in all required fields');
+            return;
+        }
+
+        // Store data in localStorage
+        localStorage.setItem('registrationData', JSON.stringify(formData));
+        
+        // Redirect to success page
+        window.location.href = 'registration-success.html';
+    });
+});
+</script> {% endcomment %}
+  
+{% endblock content %}
+
+
